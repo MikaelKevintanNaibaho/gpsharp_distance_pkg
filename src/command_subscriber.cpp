@@ -17,7 +17,7 @@ private:
 
     void command_callback(const sensor_msgs::msg::Range::SharedPtr msg)
     {
-        RCLCPP_INFO(this->get_logger(), "Received command: %d", msg->range);
+        RCLCPP_INFO(this->get_logger(), "Received command: %.2f", msg->range);
     }
 
 };
