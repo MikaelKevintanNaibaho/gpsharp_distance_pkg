@@ -20,7 +20,7 @@ add_executable(command_subscriber src/command_subscriber.cpp src/gpsharp.cpp)
 
 # dependecies
 ament_target_dependencies(distance_publisher rclcpp std_msgs sensor_msgs )
-ament_target_dependencies(command_subscriber rclcpp std_msgs)
+ament_target_dependencies(command_subscriber rclcpp std_msgs sensor_msgs)
 
 install(TARGETS
   distance_publisher
