@@ -8,7 +8,7 @@ public:
     CommandSubsriberNode() : Node("command_subscriber_node")
     {
         command_sub = this->create_subscription<std_msgs::msg::Int32>(
-            "command", 10, std::bind(&CommandSubsriberNode::command_callback, this, std::placeholders::_1)
+            "distance", 10, std::bind(&CommandSubsriberNode::command_callback, this, std::placeholders::_1)
         );
     }
 

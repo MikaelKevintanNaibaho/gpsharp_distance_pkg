@@ -26,8 +26,10 @@ private:
         double distance_cm = adc_to_distance(adc_value);
 
         auto distance_msg = sensor_msgs::msg::Range();
-        distance_msg.range = distance_cm;
+        distance_msg.range = static_cast<float>(distance_cm);
         distance_pub->publish(distance_msg);
+
+        RCLCPP_INFO(this->get_logger(), "Published distance: %.2f cm", distance_cm);
     }
 };
 
