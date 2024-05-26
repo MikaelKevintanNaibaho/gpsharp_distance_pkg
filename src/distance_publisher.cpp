@@ -10,7 +10,7 @@ public:
     {
         spi_init(SPI_DEVICE);
 
-        distance_pub = this->create_publisher<sensor_msgs::msg::Range>("distance", 10);
+        distance_pub = this->create_publisher<sensor_msgs::msg::Range>("distance_sensor/range", 10);
 
         timer_ = this->create_wall_timer(std::chrono::microseconds(500), std::bind(&DistancePublisherNode::publish_distance, this));
 

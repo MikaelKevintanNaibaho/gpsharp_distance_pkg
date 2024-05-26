@@ -16,15 +16,15 @@ include_directories(include)
 
 # add executable
 add_executable(distance_publisher src/distance_publisher.cpp src/gpsharp.cpp)
-add_executable(command_subscriber src/command_subscriber.cpp src/gpsharp.cpp)
+add_executable(distance_subscriber src/distance_subscriber.cpp)
 
 # dependecies
 ament_target_dependencies(distance_publisher rclcpp std_msgs sensor_msgs )
-ament_target_dependencies(command_subscriber rclcpp std_msgs sensor_msgs)
+ament_target_dependencies(distance_subscriber rclcpp std_msgs sensor_msgs)
 
 install(TARGETS
   distance_publisher
-  command_subscriber
+  distance_subscriber
   DESTINATION lib/gpsharp_distance
 )
 
